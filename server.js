@@ -8,7 +8,11 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: '*', // 모든 출처 허용 옵션. true 를 써도 된다.
+    }
+));
 app.use(bodyParser.json());
 
 const connection = mysql.createConnection({
