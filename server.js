@@ -28,12 +28,11 @@ app.get('/', (req, res) => {
 
 
 app.get('/api/text', (req, res) => {
-    console.log(connection)
     connection.query('SELECT * FROM texts ORDER BY RAND() LIMIT 1', (error, results) => {
         if (error) throw Error
         res.json({ text: `${results[0].text} by ${results[0].username}` });
     });
-    res.send('hi')
+    res.json({ text: "hi" })
 });
 
 app.post('/api/text', (req, res) => {
