@@ -32,6 +32,7 @@ app.get('/api/text', (req, res) => {
         if (error) throw Error
         res.json({ text: `${results[0].text} by ${results[0].username}` });
     });
+    res.send('hi')
 });
 
 app.post('/api/text', (req, res) => {
